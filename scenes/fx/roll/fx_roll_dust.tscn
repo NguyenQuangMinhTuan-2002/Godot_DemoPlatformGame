@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgo6adtxeat17"]
+
+[ext_resource type="Texture2D" uid="uid://ecd0qftxophq" path="res://my_assets/Sprites_char/FX/RollDust/RollDust01.png" id="1_0636r"]
+[ext_resource type="Script" uid="uid://ccsf82bkrshjf" path="res://scenes/fx/roll/fx_roll_dust.gd" id="1_gcn2g"]
+[ext_resource type="Texture2D" uid="uid://d2gr0tn4expn0" path="res://my_assets/Sprites_char/FX/RollDust/RollDust02.png" id="2_gcn2g"]
+[ext_resource type="Texture2D" uid="uid://ccw1hoybes71r" path="res://my_assets/Sprites_char/FX/RollDust/RollDust03.png" id="3_j0ty3"]
+[ext_resource type="Texture2D" uid="uid://cvt0ub84yps3m" path="res://my_assets/Sprites_char/FX/RollDust/RollDust04.png" id="4_bmo2j"]
+[ext_resource type="Texture2D" uid="uid://bxj6uq08kn380" path="res://my_assets/Sprites_char/FX/RollDust/RollDust05.png" id="5_stf3i"]
+[ext_resource type="Texture2D" uid="uid://cnftdg258cbtu" path="res://my_assets/Sprites_char/FX/RollDust/RollDust06.png" id="6_1bwpc"]
+[ext_resource type="Texture2D" uid="uid://djh0pbpcpswem" path="res://my_assets/Sprites_char/FX/RollDust/RollDust07.png" id="7_kb3qg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0636r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0636r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gcn2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j0ty3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bmo2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_stf3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1bwpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kb3qg")
+}],
+"loop": false,
+"name": &"roll_dust",
+"speed": 22.0
+}]
+
+[node name="FxRollDust" type="Node2D"]
+script = ExtResource("1_gcn2g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -145)
+scale = Vector2(2.85037, 3.42262)
+sprite_frames = SubResource("SpriteFrames_0636r")
+animation = &"roll_dust"

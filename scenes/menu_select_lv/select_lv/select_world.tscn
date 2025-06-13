@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctk68r6d5n7ss"]
+
+[ext_resource type="PackedScene" uid="uid://cjt0rirbchhtw" path="res://scenes/player/player.tscn" id="1_jk0bl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu2g5"]
+size = Vector2(1152.5, 167.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxxfm"]
+size = Vector2(69, 479.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uki"]
+size = Vector2(342, 55)
+
+[node name="SelectWorld" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_jk0bl")]
+position = Vector2(183, 80)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 563.25)
+shape = SubResource("RectangleShape2D_tu2g5")
+
+[node name="wall_l" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(34.5, 240.75)
+shape = SubResource("RectangleShape2D_hxxfm")
+
+[node name="wall_r" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1118, 241)
+shape = SubResource("RectangleShape2D_hxxfm")
+
+[node name="platform" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(239, 373.5)
+shape = SubResource("RectangleShape2D_f3uki")
+
+[node name="platform2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(913, 147)
+shape = SubResource("RectangleShape2D_f3uki")
+
+[node name="box" type="Node2D" parent="."]
+
+[node name="panel_ground" type="Panel" parent="box"]
+offset_top = 480.0
+offset_right = 1151.0
+offset_bottom = 647.0
+
+[node name="panel_side" type="Panel" parent="box"]
+offset_left = 69.0
+offset_top = 346.0
+offset_right = 411.0
+offset_bottom = 401.0
+
+[node name="panel_side2" type="Panel" parent="box"]
+offset_left = 741.0
+offset_top = 119.0
+offset_right = 1083.0
+offset_bottom = 174.0
+
+[node name="Panel_wall_left" type="Panel" parent="box"]
+offset_top = 1.0
+offset_right = 69.0
+offset_bottom = 480.0
+
+[node name="Panel_wall_right" type="Panel" parent="box"]
+offset_left = 1083.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 480.0
